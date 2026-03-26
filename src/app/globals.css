@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 249, 250, 251;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.drop-zone {
+  @apply border-2 border-dashed border-gray-300 rounded-lg p-12 text-center cursor-pointer transition-all duration-200;
+}
+
+.drop-zone:hover,
+.drop-zone.drag-over {
+  @apply border-blue-500 bg-blue-50;
+}
+
+.spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500;
+}
